@@ -41,6 +41,7 @@ function setupHamburgerMenu() {
         // ナビゲーションリンクがクリックされたときにメニューを閉じる
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
+                // メニューを閉じる（モバイルの場合）
                 hamburger.classList.remove('active');
                 navList.classList.remove('active');
                 document.body.style.overflow = '';
@@ -84,20 +85,26 @@ function setupSmoothScroll() {
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
+            const href = this.getAttribute('href');
             
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight;
+            // ハッシュリンク（#で始まるリンク）の場合のみスムーススクロール処理
+            if (href.startsWith('#')) {
+                e.preventDefault();
                 
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
+            // 外部リンクや他のHTMLファイルへのリンクはそのまま通す
         });
     });
 }
