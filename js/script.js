@@ -2,6 +2,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('自己紹介サイトが読み込まれました');
     
+    // ハンバーガーメニューの設定
+    setupHamburgerMenu();
+    
     // スキルバーのアニメーション
     animateSkillBars();
     
@@ -14,6 +17,46 @@ document.addEventListener('DOMContentLoaded', function() {
     // スクロール時のナビゲーション効果
     setupScrollEffects();
 });
+
+// ハンバーガーメニューの設定
+function setupHamburgerMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.getElementById('navList');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    if (hamburger && navList) {
+        // ハンバーガーボタンのクリック処理
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navList.classList.toggle('active');
+            
+            // ボディのスクロールを制御
+            if (navList.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // ナビゲーションリンクがクリックされたときにメニューを閉じる
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navList.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // ウィンドウリサイズ時の処理
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove('active');
+                navList.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+}
 
 // スキルバーのアニメーション
 function animateSkillBars() {
