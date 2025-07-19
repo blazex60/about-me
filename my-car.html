@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自己紹介サイト - 愛車FK7</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- reset.css -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <button class="hamburger" id="hamburger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="nav-list" id="navList">
+                    <li class="nav-item"><a href="index.html#profile" class="nav-link">プロフィール</a></li>
+                    <li class="nav-item"><a href="skills.html" class="nav-link">スキル</a></li>
+                    <li class="nav-item"><a href="hobbies.html" class="nav-link">趣味</a></li>
+                    <li class="nav-item"><a href="project.html" class="nav-link">プロジェクト</a></li>
+                    <li class="nav-item"><a href="my-car.html" class="nav-link">愛車</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero">
+            <h1 class="hero-title">About-Me</h1>
+            <p class="hero-subtitle">愛車 FK7 シビック</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <section id="car-intro" class="section">
+            <div class="container">
+                <h2 class="section-title">愛車紹介</h2>
+                <div class="car-hero">
+                    <div class="car-main-image">
+                        <img src="images/fk7_main.jpg" alt="FK7 シビック" class="car-img" onerror="this.src='images/no_image.svg';">
+                    </div>
+                    <div class="car-basic-info">
+                        <h3 class="car-model">Honda Civic FK7</h3>
+                        <p class="car-subtitle">2017年式 シビック ハッチバック</p>
+                        <div class="car-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">エンジン</span>
+                                <span class="stat-value">1.5L VTEC TURBO</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">最高出力</span>
+                                <span class="stat-value">182PS/6,000rpm</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">最大トルク</span>
+                                <span class="stat-value">240Nm/1,700-5,500rpm</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">駆動方式</span>
+                                <span class="stat-value">FF（前輪駆動）</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">トランスミッション</span>
+                                <span class="stat-value">CVT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="car-features" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">特徴・魅力</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚗</div>
+                        <h3 class="feature-title">スポーティなデザイン</h3>
+                        <p class="feature-description">
+                            10代目シビックの特徴的なファストバックスタイル。シャープなヘッドライトとアグレッシブなフロントグリルが印象的です。
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">1.5L VTEC ターボ</h3>
+                        <p class="feature-description">
+                            小排気量ながらターボチャージャーにより力強い加速を実現。燃費と走行性能を両立した現代的なエンジンです。
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛣️</div>
+                        <h3 class="feature-title">優れた走行性能</h3>
+                        <p class="feature-description">
+                            しっかりとした足回りとバランスの良いハンドリング。峠道でのドライビングが特に楽しい一台です。
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3 class="feature-title">Honda SENSING</h3>
+                        <p class="feature-description">
+                            先進の安全運転支援システム。衝突軽減ブレーキや誤発進抑制機能など、安心・安全な運転をサポートします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="car-memories" class="section">
+            <div class="container">
+                <h2 class="section-title">思い出・エピソード</h2>
+                <div class="memories-content">
+                    <div class="memory-item">
+                        <h3 class="memory-title">購入のきっかけ</h3>
+                        <p class="memory-text">
+                            学生時代からスポーティなハッチバックに憧れがあり、FK7シビックのデザインに一目惚れしました。
+                            試乗した時のターボエンジンの力強さと、ハンドリングの良さに感動して即決でした。
+                        </p>
+                    </div>
+                    <div class="memory-item">
+                        <h3 class="memory-title">お気に入りのドライブスポット</h3>
+                        <p class="memory-text">
+                            箱根のターンパイクや伊豆スカイラインなど、ワインディングロードでのドライビングが最高です。
+                            FK7の軽快なハンドリングを存分に楽しめるコースばかりです。
+                        </p>
+                    </div>
+                    <div class="memory-item">
+                        <h3 class="memory-title">カスタマイズ</h3>
+                        <p class="memory-text">
+                            エアロパーツやホイール交換など、少しずつ自分好みにカスタマイズしています。
+                            外観だけでなく、サスペンション調整で走行性能も向上させました。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="car-gallery">
+                    <h3 class="gallery-title">愛車ギャラリー</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/fk7_front.jpg" alt="フロントビュー" class="gallery-img" onerror="this.src='images/no_image.svg';">
+                            <p class="gallery-caption">フロントビュー</p>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/fk7_side.jpg" alt="サイドビュー" class="gallery-img" onerror="this.src='images/no_image.svg';">
+                            <p class="gallery-caption">サイドビュー</p>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/fk7_rear.jpg" alt="リアビュー" class="gallery-img" onerror="this.src='images/no_image.svg';">
+                            <p class="gallery-caption">リアビュー</p>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/fk7_interior.jpg" alt="インテリア" class="gallery-img" onerror="this.src='images/no_image.svg';">
+                            <p class="gallery-caption">インテリア</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">お問い合わせ</h2>
+                <div class="contact-content">
+                    <p class="contact-text">お気軽にお問い合わせください。</p>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">お名前</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">メールアドレス</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">メッセージ</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">送信</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 わたしの自己紹介サイト</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

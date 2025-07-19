@@ -287,7 +287,7 @@ body {
 /* 趣味 */
 .hobbies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     max-width: 1000px;
     margin: 0 auto;
@@ -625,7 +625,283 @@ body {
     margin: 0;
 }
 
+/* ドライブカード専用画像・テキストスタイル */
+.drive-card .hobby-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.drive-card .hobby-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.drive-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.drive-card:hover .drive-img {
+    transform: scale(1.1);
+}
+
+.fallback-icon {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.drive-card .hobby-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.drive-card .hobby-description {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* ホバー効果 */
+.drive-card:hover {
+    transform: scale(1.25) translateY(-10px);
+}
+
+/* ドライブカードの強調スタイル（デスクトップ） */
+.drive-card {
+    position: relative;
+    transform: scale(1.2);
+    z-index: 2;
+    grid-column: span 2;
+    max-width: none;
+}
+
+/* 愛車ページ専用スタイル */
+.car-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.car-main-image {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.car-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.car-img:hover {
+    transform: scale(1.05);
+}
+
+.car-basic-info {
+    padding: 1rem;
+}
+
+.car-model {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.car-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.car-stats {
+    display: grid;
+    gap: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.stat-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 120px;
+}
+
+.stat-value {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.memories-content {
+    margin-bottom: 3rem;
+}
+
+.memory-item {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.memory-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.memory-title::before {
+    content: '🚗';
+    margin-right: 0.5rem;
+}
+
+.memory-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.car-gallery {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.gallery-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 1rem 0.5rem 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}
+
 /* レスポンシブデザイン */
+@media (max-width: 1024px) and (min-width: 769px) {
+    /* タブレット用 */
+    .hobbies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .drive-card {
+        grid-column: span 2;
+    }
+    
+    .car-hero {
+        gap: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2rem;
@@ -681,6 +957,28 @@ body {
         grid-template-columns: 1fr;
     }
     
+    .drive-card {
+        grid-column: span 1;
+        transform: scale(1.1);
+    }
+    
+    .drive-card .hobby-image {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .drive-card .hobby-title {
+        font-size: 1.5rem;
+    }
+    
+    .drive-card .hobby-description {
+        font-size: 1rem;
+    }
+    
+    .drive-card:hover {
+        transform: scale(1.15) translateY(-8px);
+    }
+    
     .section {
         padding: 2rem 0;
     }
@@ -689,7 +987,35 @@ body {
         padding: 0 15px;
     }
     
-    /* プロジェクトページのレスポンシブ対応 */
+    /* 愛車ページ */
+    .car-hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .car-model {
+        font-size: 1.8rem;
+    }
+    
+    .stat-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .stat-label {
+        min-width: auto;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* プロジェクトページ */
     .project-header {
         flex-direction: column;
         align-items: flex-start;
@@ -731,5 +1057,9 @@ body {
     .nav-link {
         font-size: 1.2rem;
         padding: 0.8rem 1.5rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
     }
 }
