@@ -1,0 +1,76 @@
+<svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#98D8E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B0E0E6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mountainGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4682B4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#5F9EA0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#708090;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="roadGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#696969;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#808080;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A9A9A9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="800" height="200" fill="url(#skyGradient)"/>
+  
+  <!-- Mountains -->
+  <polygon points="0,180 200,80 400,120 600,60 800,100 800,200 0,200" fill="url(#mountainGradient)" opacity="0.8"/>
+  <polygon points="100,200 300,100 500,140 700,80 800,120 800,200" fill="url(#mountainGradient)" opacity="0.6"/>
+  
+  <!-- Road -->
+  <polygon points="0,200 100,190 200,195 300,185 400,190 500,180 600,185 700,175 800,180 800,300 0,300" fill="url(#roadGradient)"/>
+  
+  <!-- Road lines -->
+  <line x1="0" y1="220" x2="800" y2="200" stroke="#FFFFFF" stroke-width="3" opacity="0.8"/>
+  <line x1="0" y1="240" x2="800" y2="220" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Trees -->
+  <g opacity="0.7">
+    <!-- Tree 1 -->
+    <rect x="120" y="160" width="8" height="40" fill="#8B4513"/>
+    <circle cx="124" cy="155" r="15" fill="#228B22"/>
+    
+    <!-- Tree 2 -->
+    <rect x="320" y="140" width="10" height="50" fill="#8B4513"/>
+    <circle cx="325" cy="135" r="18" fill="#32CD32"/>
+    
+    <!-- Tree 3 -->
+    <rect x="520" y="170" width="6" height="30" fill="#8B4513"/>
+    <circle cx="523" cy="165" r="12" fill="#228B22"/>
+    
+    <!-- Tree 4 -->
+    <rect x="680" y="145" width="8" height="45" fill="#8B4513"/>
+    <circle cx="684" cy="140" r="16" fill="#32CD32"/>
+  </g>
+  
+  <!-- Clouds -->
+  <g fill="#FFFFFF" opacity="0.8">
+    <ellipse cx="150" cy="50" rx="40" ry="20"/>
+    <ellipse cx="170" cy="45" rx="35" ry="18"/>
+    <ellipse cx="130" cy="45" rx="30" ry="15"/>
+    
+    <ellipse cx="600" cy="70" rx="45" ry="22"/>
+    <ellipse cx="620" cy="65" rx="38" ry="20"/>
+    <ellipse cx="580" cy="65" rx="32" ry="18"/>
+  </g>
+  
+  <!-- Sun -->
+  <circle cx="700" cy="60" r="30" fill="#FFD700" opacity="0.9"/>
+  <g stroke="#FFD700" stroke-width="3" opacity="0.7">
+    <line x1="700" y1="20" x2="700" y2="30"/>
+    <line x1="700" y1="90" x2="700" y2="100"/>
+    <line x1="660" y1="60" x2="670" y2="60"/>
+    <line x1="730" y1="60" x2="740" y2="60"/>
+    <line x1="675" y1="35" x2="683" y2="43"/>
+    <line x1="717" y1="77" x2="725" y2="85"/>
+    <line x1="725" y1="35" x2="717" y2="43"/>
+    <line x1="683" y1="77" x2="675" y2="85"/>
+  </g>
+</svg>
