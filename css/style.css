@@ -996,16 +996,147 @@ body {
     transform: scale(1.05);
 }
 
-/* フッター */
-.footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: auto;
+/* エンジン詳細セクション */
+.engine-details-content {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-/* レスポンシブデザイン */
+.engine-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.engine-info-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--secondary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.engine-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.engine-info-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.engine-info-title::before {
+    content: '⚙️';
+    font-size: 1.2rem;
+}
+
+.engine-info-text {
+    line-height: 1.7;
+    color: var(--text-color);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* 車両概要セクション */
+.car-overview {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    border: 1px solid #e0e0e0;
+}
+
+.overview-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.overview-grid {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.overview-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.overview-item:last-child {
+    border-bottom: none;
+}
+
+.overview-label {
+    font-weight: 500;
+    color: var(--text-color);
+    flex: 1;
+}
+
+.overview-value {
+    font-weight: 600;
+    color: var(--primary-color);
+    flex: 1;
+    text-align: right;
+}
+
+.stats-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .engine-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .engine-info-card {
+        padding: 1.5rem;
+    }
+    
+    .engine-info-title {
+        font-size: 1.2rem;
+    }
+    
+    .overview-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+    
+    .overview-value {
+        text-align: left;
+        font-weight: 500;
+        color: var(--secondary-color);
+    }
+    
+    .car-overview {
+        padding: 1rem;
+    }
+}
+
 @media (max-width: 1024px) and (min-width: 769px) {
     .hobbies-grid {
         grid-template-columns: repeat(2, 1fr);
