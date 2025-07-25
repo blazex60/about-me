@@ -1,0 +1,215 @@
+/* レスポンシブデザイン */
+
+/* タブレット対応 (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .hobbies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .drive-card {
+        grid-column: span 2;
+    }
+    
+    .car-hero {
+        gap: 2rem;
+    }
+}
+
+/* モバイル対応 (最大768px) */
+@media (max-width: 768px) {
+    /* ヘッダー */
+    .header {
+        background-size: cover;
+        background-position: center top;
+    }
+    
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    /* ナビゲーション */
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 5rem 2rem 2rem;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-list.active {
+        right: 0;
+    }
+    
+    .nav-item {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .nav-link {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* プロフィール */
+    .profile-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* グリッド */
+    .skills-grid,
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* ドライブカード */
+    .drive-card {
+        grid-column: span 1;
+        transform: scale(1.1);
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .drive-card .hobby-image {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .drive-card .hobby-title {
+        font-size: 1.5rem;
+    }
+    
+    .drive-card .hobby-description {
+        font-size: 1rem;
+    }
+    
+    .drive-card:hover {
+        transform: scale(1.15) translateY(-8px);
+    }
+    
+    /* セクション */
+    .section {
+        padding: 2rem 0;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* 愛車ページ */
+    .car-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .car-model {
+        font-size: 1.8rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* エンジン詳細 */
+    .engine-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .engine-info-card {
+        padding: 1.5rem;
+    }
+    
+    .engine-info-title {
+        font-size: 1.2rem;
+    }
+    
+    /* 車両概要 */
+    .overview-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+    
+    .overview-value {
+        text-align: left;
+        font-weight: 500;
+        color: var(--secondary-color);
+    }
+    
+    .car-overview {
+        padding: 1rem;
+    }
+}
+
+/* 小さなモバイル対応 (最大480px) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 1.5rem 0;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .car-model {
+        font-size: 1.5rem;
+    }
+    
+    .feature-title {
+        font-size: 1.2rem;
+    }
+    
+    .memory-item {
+        padding: 1.5rem;
+    }
+    
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}

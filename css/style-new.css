@@ -1,0 +1,16 @@
+/* メインスタイルファイル - 分割されたCSSファイルを統合 */
+
+/* 基本設定とCSS変数 */
+@import url('base.css');
+
+/* レイアウト・グリッド・コンテナ */
+@import url('layout.css');
+
+/* ヘッダー・ナビ・カード・ボタンなどのコンポーネント */
+@import url('components.css');
+
+/* ページ固有のスタイル */
+@import url('pages.css');
+
+/* レスポンシブ対応 */
+@import url('responsive.css');

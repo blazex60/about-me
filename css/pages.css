@@ -1,0 +1,703 @@
+/* プロフィールページ */
+.profile-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-image {
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--secondary-color);
+    box-shadow: var(--shadow);
+}
+
+.profile-text {
+    flex: 1;
+}
+
+.profile-description {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+}
+
+.name-highlight {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.profile-details p {
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    font-size: 1rem;
+}
+
+/* スキルページ */
+.skill-title {
+    font-family: var(--font-display);
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.skill-bar {
+    background-color: #e0e0e0;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border-radius: 5px;
+    transition: width 2s ease;
+}
+
+.skill-level {
+    text-align: right;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* 趣味ページ */
+.hobby-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hobby-title {
+    font-family: var(--font-display);
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.hobby-description {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ドライブカード専用スタイル */
+.drive-card {
+    position: relative;
+    transform: scale(1.2);
+    z-index: 2;
+    grid-column: span 2;
+    max-width: none;
+    display: flex;
+    align-items: center;
+    /* 美しい風景の背景画像を使用 */
+    background-image: url('../images/drive_background.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* テキストを見やすくするためのオーバーレイ */
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+/* ホバー時のエフェクト */
+.drive-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(102, 126, 234, 0.1) 0%, 
+        rgba(118, 75, 162, 0.1) 25%, 
+        rgba(240, 147, 251, 0.1) 50%, 
+        rgba(245, 87, 108, 0.1) 75%, 
+        rgba(79, 172, 254, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.drive-card:hover::before {
+    opacity: 1;
+}
+
+.drive-card:hover {
+    transform: scale(1.25) translateY(-10px);
+}
+
+.drive-card .hobby-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 1.5rem 0 0;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+    align-self: center;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 2;
+}
+
+.drive-content {
+    flex: 1;
+}
+
+.drive-card .hobby-title,
+.drive-card .hobby-description {
+    text-align: left;
+    margin-left: 0;
+    color: var(--white);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 2;
+}
+
+.drive-card .hobby-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.drive-card .hobby-description {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.drive-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* コンタクトページ */
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-text {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    letter-spacing: 0.3px;
+}
+
+/* プロジェクトページ */
+.intro-text {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent-color);
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.project-item {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.project-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    flex: 1;
+}
+
+.project-status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    min-width: 80px;
+}
+
+.project-status.ongoing {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.project-status.planning {
+    background-color: #ffd700;
+    color: var(--primary-color);
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-info {
+    display: grid;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--light-bg);
+    padding: 1.2rem;
+    border-radius: var(--border-radius);
+}
+
+.project-detail {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.project-detail strong {
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 80px;
+    margin-right: 1rem;
+}
+
+.project-description {
+    margin-bottom: 1.5rem;
+}
+
+.project-description p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.project-features {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-features li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.project-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.project-tech {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.project-tech strong {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+}
+
+.tech-tag:hover {
+    transform: scale(1.05);
+}
+
+.project-learning {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+}
+
+.project-learning h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.project-learning h3::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.learning-item {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.learning-item:hover {
+    transform: translateY(-3px);
+}
+
+.learning-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.learning-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* 愛車ページ */
+.car-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.car-main-image {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.car-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.car-img:hover {
+    transform: scale(1.05);
+}
+
+.car-info,
+.car-basic-info {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.car-title,
+.car-model {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.car-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.car-specs,
+.car-stats {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.car-specs li,
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.car-specs li:last-child,
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.car-specs strong,
+.stat-label {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.stat-value {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-description {
+    color: #666;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.memories-content {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.memory-item {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.memory-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.memory-text {
+    line-height: 1.8;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.car-gallery {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-title {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img,
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: var(--white);
+    padding: 2rem 1rem 1rem;
+    font-weight: 500;
+}
+
+.engine-details-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.engine-info-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--secondary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.engine-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.engine-info-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.engine-info-title::before {
+    content: '⚙️';
+    font-size: 1.2rem;
+}
+
+.engine-info-text {
+    line-height: 1.7;
+    color: var(--text-color);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.car-overview {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    border: 1px solid #e0e0e0;
+}
+
+.overview-title,
+.stats-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.stats-title {
+    border-bottom-color: var(--secondary-color);
+}
+
+.overview-grid {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.overview-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.overview-item:last-child {
+    border-bottom: none;
+}
+
+.overview-label {
+    font-weight: 500;
+    color: var(--text-color);
+    flex: 1;
+}
+
+.overview-value {
+    font-weight: 600;
+    color: var(--primary-color);
+    flex: 1;
+    text-align: right;
+}
