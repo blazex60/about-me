@@ -1,23 +1,55 @@
-/* プロフィールページ */
+/* モダンなプロフィールページ */
 .profile-content {
     display: flex;
     align-items: center;
-    gap: 3rem;
-    max-width: 800px;
+    gap: 4rem;
+    max-width: 900px;
     margin: 0 auto;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .profile-image {
     flex-shrink: 0;
+    position: relative;
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: var(--gradient-accent);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.profile-image:hover::before {
+    opacity: 0.3;
 }
 
 .profile-img {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--secondary-color);
-    box-shadow: var(--shadow);
+    border: 4px solid transparent;
+    background: var(--gradient-primary);
+    padding: 4px;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-xl);
 }
 
 .profile-text {
@@ -25,94 +57,142 @@
 }
 
 .profile-description {
-    font-size: 1.1rem;
-    font-weight: 300;
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
     line-height: 1.8;
     letter-spacing: 0.3px;
+    color: var(--text-muted);
 }
 
 .name-highlight {
-    color: var(--secondary-color);
-    font-weight: 600;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.profile-details {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--accent-color);
 }
 
 .profile-details p {
-    margin-bottom: 0.5rem;
-    font-weight: 400;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
     letter-spacing: 0.2px;
     font-size: 1rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
-/* スキルページ */
+.profile-details p:last-child {
+    margin-bottom: 0;
+}
+
+.detail-icon {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+/* モダンなスキルページ */
 .skill-title {
     font-family: var(--font-display);
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.3rem;
     letter-spacing: 0.5px;
 }
 
 .skill-bar {
-    background-color: #e0e0e0;
-    height: 10px;
-    border-radius: 5px;
+    background: linear-gradient(90deg, #e2e8f0, #f1f5f9);
+    height: 12px;
+    border-radius: var(--border-radius-sm);
     overflow: hidden;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    position: relative;
 }
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-    border-radius: 5px;
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius-sm);
     transition: width 2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 .skill-level {
     text-align: right;
-    font-weight: bold;
-    color: var(--secondary-color);
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 0.9rem;
 }
 
-/* 趣味ページ */
+/* モダンな趣味ページ */
 .hobby-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
 .hobby-title {
     font-family: var(--font-display);
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.4rem;
     letter-spacing: 0.5px;
 }
 
 .hobby-description {
-    color: #666;
-    line-height: 1.6;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 1rem;
 }
 
-/* ドライブカード専用スタイル */
+/* モダンなドライブカード */
 .drive-card {
     position: relative;
-    transform: scale(1.2);
+    transform: scale(1.15);
     z-index: 2;
     grid-column: span 2;
     max-width: none;
     display: flex;
     align-items: center;
-    /* 美しい風景の背景画像を使用 */
-    background-image: url('../images/drive_background.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* テキストを見やすくするためのオーバーレイ */
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.15);
+    background: var(--gradient-bg);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    border-radius: var(--border-radius-xl);
     overflow: hidden;
+    border: 2px solid var(--glass-border);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
-/* ホバー時のエフェクト */
 .drive-card::before {
     content: '';
     position: absolute;
@@ -120,22 +200,19 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, 
-        rgba(102, 126, 234, 0.1) 0%, 
-        rgba(118, 75, 162, 0.1) 25%, 
-        rgba(240, 147, 251, 0.1) 50%, 
-        rgba(245, 87, 108, 0.1) 75%, 
-        rgba(79, 172, 254, 0.1) 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: opacity var(--transition-base);
 }
 
 .drive-card:hover::before {
-    opacity: 1;
+    opacity: 0.8;
 }
 
 .drive-card:hover {
-    transform: scale(1.25) translateY(-10px);
+    transform: scale(1.2) translateY(-10px);
+    box-shadow: var(--shadow-xl);
 }
 
 .drive-card .hobby-image {
@@ -192,19 +269,20 @@
     transition: transform 0.3s ease;
 }
 
-/* コンタクトページ */
+/* モダンなコンタクトページ */
 .contact-content {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     text-align: center;
 }
 
 .contact-text {
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-bottom: 2rem;
-    color: var(--text-color);
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    color: var(--text-muted);
     letter-spacing: 0.3px;
+    line-height: 1.7;
 }
 
 /* プロジェクトページ */

@@ -1,15 +1,43 @@
-/* 基本設定とCSS変数 */
+/* モダンなデザインシステム */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #003355;
-    --accent-color: #69ffa5;
-    --text-color: #333;
-    --light-bg: #f8f9fa;
+    /* カラーパレット - モダンで洗練された色合い */
+    --primary-color: #1a1d29;
+    --secondary-color: #2d3748;
+    --accent-color: #667eea;
+    --accent-secondary: #764ba2;
+    --success-color: #48bb78;
+    --text-color: #2d3748;
+    --text-muted: #718096;
+    --light-bg: #f7fafc;
     --white: #ffffff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --border-radius: 8px;
-    --font-primary: 'Inter', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
-    --font-display: 'Playfair Display', 'Times New Roman', serif;
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    
+    /* モダンなシャドウシステム */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+    
+    /* グラデーション */
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    
+    /* 境界線と角丸 */
+    --border-radius-sm: 6px;
+    --border-radius: 12px;
+    --border-radius-lg: 20px;
+    --border-radius-xl: 24px;
+    
+    /* フォント */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    
+    /* アニメーション - パフォーマンス重視 */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* リセットスタイル */
@@ -19,29 +47,77 @@
     box-sizing: border-box;
 }
 
-/* 基本のbodyスタイル */
+/* モダンなボディスタイル */
 body {
     font-family: var(--font-primary);
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-color);
-    background-color: var(--light-bg);
+    background: var(--light-bg);
     font-feature-settings: "kern" 1, "liga" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-/* フッター */
+/* グローバルスタイル */
+::selection {
+    background: var(--accent-color);
+    color: var(--white);
+}
+
+/* スクロールバーのカスタマイズ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-secondary);
+}
+
+/* モダンなフッター */
 .footer {
-    background-color: var(--primary-color);
+    background: var(--gradient-primary);
     color: var(--white);
     text-align: center;
-    padding: 2rem 0;
+    padding: 3rem 0 2rem;
     margin-top: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
 .footer p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 500;
     letter-spacing: 0.5px;
+    position: relative;
+    z-index: 2;
 }

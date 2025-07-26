@@ -19,16 +19,15 @@
 @media (max-width: 768px) {
     /* ヘッダー */
     .header {
-        background-size: cover;
-        background-position: center top;
+        background: var(--gradient-primary);
     }
     
     .hero {
-        padding: 2rem 0;
+        padding: 3rem 0;
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: clamp(2rem, 8vw, 2.5rem);
     }
     
     /* ナビゲーション */
@@ -40,16 +39,19 @@
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%;
+        width: 75%;
         height: 100vh;
-        background-color: var(--primary-color);
+        background: var(--gradient-primary);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        padding: 5rem 2rem 2rem;
-        transition: right 0.3s ease;
+        padding: 6rem 2rem 2rem;
+        transition: right var(--transition-slow);
         z-index: 1000;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        box-shadow: var(--shadow-xl);
+        border-left: 1px solid var(--glass-border);
     }
     
     .nav-list.active {
@@ -58,65 +60,45 @@
     
     .nav-item {
         width: 100%;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
     
     .nav-link {
         display: block;
         width: 100%;
-        padding: 1rem;
-        font-size: 1.1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 1.25rem 1.5rem;
+        font-size: 1.2rem;
+        border: 1px solid transparent;
+        border-radius: var(--border-radius);
+        margin-bottom: 0.5rem;
+        transition: all var(--transition-base);
+        position: relative;
+        z-index: 1;
     }
     
     .nav-link:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateX(8px);
+        box-shadow: var(--shadow-sm);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
     
     /* プロフィール */
     .profile-content {
         flex-direction: column;
         text-align: center;
-    }
-    
-    /* グリッド */
-    .skills-grid,
-    .hobbies-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* ドライブカード */
-    .drive-card {
-        grid-column: span 1;
-        transform: scale(1.1);
-        background-size: cover;
-        background-position: center;
-    }
-    
-    .drive-card .hobby-image {
-        width: 90px;
-        height: 90px;
-    }
-    
-    .drive-card .hobby-title {
-        font-size: 1.5rem;
-    }
-    
-    .drive-card .hobby-description {
-        font-size: 1rem;
-    }
-    
-    .drive-card:hover {
-        transform: scale(1.15) translateY(-8px);
+        padding: 2rem;
+        gap: 2.5rem;
     }
     
     /* セクション */
     .section {
-        padding: 2rem 0;
+        padding: 4rem 0;
     }
     
     .container {
-        padding: 0 15px;
+        padding: 0 1rem;
     }
     
     /* 愛車ページ */
