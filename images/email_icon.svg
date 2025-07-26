@@ -1,0 +1,13 @@
+<!-- Email icon by KezBrit - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=94552186 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4285f4"/>
+      <stop offset="100%" style="stop-color:#34a853"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="60" fill="url(#bg)"/>
+  <path d="M30 40h60v40H30z" fill="white" rx="4"/>
+  <path d="M30 40l30 25 30-25" stroke="#4285f4" stroke-width="2" fill="none"/>
+  <path d="M30 40v40h60V40" stroke="#4285f4" stroke-width="2" fill="none"/>
+</svg>

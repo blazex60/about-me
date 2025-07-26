@@ -1,0 +1,23 @@
+<!-- Instagram icon - Instagram Logo PNG, Public Domain, https://commons.wikimedia.org/w/index.php?curid=45282245 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <radialGradient id="instagramGradient" cx="20%" cy="20%" r="120%">
+      <stop offset="0%" style="stop-color:#ffdb73"/>
+      <stop offset="20%" style="stop-color:#fdcb6e"/>
+      <stop offset="40%" style="stop-color:#e84393"/>
+      <stop offset="70%" style="stop-color:#8e44ad"/>
+      <stop offset="100%" style="stop-color:#3742fa"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="1000" height="1000" rx="180" fill="url(#instagramGradient)"/>
+  
+  <!-- Camera outline -->
+  <rect x="200" y="200" width="600" height="600" rx="120" fill="none" stroke="white" stroke-width="50"/>
+  
+  <!-- Camera lens -->
+  <circle cx="500" cy="500" r="150" fill="none" stroke="white" stroke-width="50"/>
+  
+  <!-- Camera flash -->
+  <circle cx="650" cy="350" r="50" fill="white"/>
+</svg>

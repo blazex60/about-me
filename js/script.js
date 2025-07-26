@@ -2,7 +2,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('自己紹介サイトが読み込まれました');
     
-    // ハンバーガーメニューの設定
+    // 新しいハンバーガーメニューの設定
+    setupNewHamburgerMenu();
+    
+    // ハンバーガーメニューの設定（レガシー）
     setupHamburgerMenu();
     
     // スキルバーのアニメーション
@@ -17,6 +20,46 @@ document.addEventListener('DOMContentLoaded', function() {
     // スクロール時のナビゲーション効果
     setupScrollEffects();
 });
+
+// 新しいハンバーガーメニューの設定（tempデザイン用）
+function setupNewHamburgerMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            // ボディのスクロールを制御
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // ナビゲーションリンクがクリックされたときにメニューを閉じる
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                // メニューを閉じる（モバイルの場合）
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // ウィンドウサイズ変更時の処理
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+}
 
 // ハンバーガーメニューの設定
 function setupHamburgerMenu() {

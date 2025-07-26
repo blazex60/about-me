@@ -380,3 +380,81 @@
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
     transform: translateY(-2px);
 }
+
+/* エメラルドグリーンテーマオーバーライド */
+:root {
+    --emerald-primary: #10b981;
+    --emerald-dark: #047857;
+    --emerald-light: #6ee7b7;
+    --emerald-bg: #f0fdf4;
+    --emerald-white: #fefffe;
+}
+
+/* ヘッダーのエメラルドグリーンテーマ */
+.header {
+    background: linear-gradient(135deg, var(--emerald-primary) 0%, var(--emerald-dark) 100%);
+}
+
+/* スキルバーのエメラルドグリーンテーマ */
+.skill-progress {
+    background: linear-gradient(135deg, var(--emerald-primary) 0%, var(--emerald-dark) 100%) !important;
+}
+
+/* プロジェクトタグのエメラルドグリーンテーマ */
+.project-tag,
+.tech-tag {
+    background: linear-gradient(135deg, var(--emerald-primary) 0%, var(--emerald-dark) 100%) !important;
+    color: white !important;
+}
+
+/* カードホバー効果 */
+.card:hover,
+.skill-item:hover,
+.project-card:hover,
+.hobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15) !important;
+}
+
+/* セクション背景 */
+.section-alt {
+    background: var(--emerald-bg) !important;
+}
+
+/* アクセントカラー */
+.accent-color,
+.highlight {
+    color: var(--emerald-primary) !important;
+}
+
+/* ボタンテーマ */
+.btn-primary,
+.contact-btn {
+    background: linear-gradient(135deg, var(--emerald-primary) 0%, var(--emerald-dark) 100%) !important;
+    color: white !important;
+}
+
+.btn-primary:hover,
+.contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3) !important;
+}
+
+.btn-secondary {
+    background: transparent !important;
+    color: var(--emerald-primary) !important;
+    border: 2px solid var(--emerald-primary) !important;
+}
+
+.btn-secondary:hover {
+    background: var(--emerald-primary) !important;
+    color: white !important;
+}
+
+/* フッターテーマ */
+.footer {
+    background: var(--emerald-dark) !important;
+    color: white !important;
+}
+
+/* エメラルドグリーンテーマ終了 */

@@ -112,9 +112,8 @@
 }
 
 .skill-bar {
-    background: linear-gradient(90deg, #e2e8f0, #f1f5f9);
-    height: 12px;
-    border-radius: var(--border-radius-sm);
+    background: #f3f4f6;
+    border-radius: 10px;
     overflow: hidden;
     margin-bottom: 1rem;
     position: relative;
@@ -122,9 +121,10 @@
 
 .skill-progress {
     height: 100%;
-    background: var(--gradient-primary);
-    border-radius: var(--border-radius-sm);
-    transition: width 2s ease;
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%) !important;
+    height: 10px;
+    border-radius: 10px;
+    transition: width 2s ease-in-out;
     position: relative;
     overflow: hidden;
 }
@@ -310,7 +310,7 @@
 }
 
 .contact-card {
-    background: var(--white);
+    background: white;
     padding: 2.5rem;
     border-radius: var(--border-radius-xl);
     box-shadow: var(--shadow-md);
@@ -482,6 +482,7 @@
     font-weight: 600;
     margin: 0;
     flex: 1;
+    color: #10b981 !important;
 }
 
 .project-status {
@@ -929,3 +930,107 @@
     flex: 1;
     text-align: right;
 }
+
+/* エメラルドグリーンテーマ - ページ固有スタイル */
+
+/* プロフィール画像のエメラルドグリーンテーマ */
+.profile-img {
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%) !important;
+}
+
+.profile-image::before {
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%) !important;
+}
+
+/* スキルページのエメラルドグリーンテーマ */
+.skill-item {
+    background: white;
+    border: 1px solid rgba(16, 185, 129, 0.1);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+}
+
+.skill-title {
+    color: #10b981 !important;
+}
+
+.skill-bar {
+    background: #f3f4f6;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%) !important;
+    height: 10px;
+    border-radius: 10px;
+    transition: width 2s ease-in-out;
+}
+
+/* プロジェクトページのエメラルドグリーンテーマ */
+.project-item,
+.project-card {
+    background: white;
+    border: 1px solid rgba(16, 185, 129, 0.1);
+    transition: all 0.3s ease;
+}
+
+.project-item:hover,
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+}
+
+.project-title {
+    color: #10b981 !important;
+}
+
+/* 趣味ページのエメラルドグリーンテーマ */
+.hobby-item,
+.hobby-card {
+    background: white;
+    border: 1px solid rgba(16, 185, 129, 0.1);
+    transition: all 0.3s ease;
+}
+
+.hobby-item:hover,
+.hobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+}
+
+.hobby-title {
+    color: #10b981 !important;
+}
+
+/* 愛車ページのエメラルドグリーンテーマ */
+.car-specs {
+    background: #f0fdf4;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.spec-item strong {
+    color: #10b981 !important;
+}
+
+/* コンタクトページのエメラルドグリーンテーマ */
+.contact-card {
+    background: white;
+    border: 1px solid rgba(16, 185, 129, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+}
+
+.contact-title {
+    color: #10b981 !important;
+}
+
+/* エメラルドグリーンテーマ終了 */
