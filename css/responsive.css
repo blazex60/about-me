@@ -22,6 +22,27 @@
         background: var(--gradient-primary);
     }
     
+    /* ナビゲーションコンテナをモバイル対応 */
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    /* サイトタイトルのモバイル対応 */
+    .site-title {
+        padding: 0.5rem 1rem;
+        gap: 0.5rem;
+    }
+    
+    .site-text {
+        font-size: 1rem;
+    }
+    
+    .site-logo {
+        width: 24px;
+        height: 24px;
+    }
+    
     .hero {
         padding: 3rem 0;
     }
@@ -152,6 +173,24 @@
     
     .car-overview {
         padding: 1rem;
+    }
+    
+    /* 連絡先ページのレスポンシブ対応 */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact-card {
+        padding: 2rem;
+    }
+    
+    .contact-icon {
+        font-size: 2.5rem;
+    }
+    
+    .contact-note {
+        padding: 2rem;
     }
 }
 
