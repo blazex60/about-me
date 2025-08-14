@@ -5,17 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // 新しいハンバーガーメニューの設定
     setupNewHamburgerMenu();
     
-    // ハンバーガーメニューの設定（レガシー）
-    setupHamburgerMenu();
-    
     // スキルバーのアニメーション
     animateSkillBars();
     
     // スムーススクロール
     setupSmoothScroll();
-    
-    // フォームの送信処理
-    setupContactForm();
     
     // スクロール時のナビゲーション効果
     setupScrollEffects();
@@ -55,47 +49,6 @@ function setupNewHamburgerMenu() {
             if (window.innerWidth > 768) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    }
-}
-
-// ハンバーガーメニューの設定
-function setupHamburgerMenu() {
-    const hamburger = document.getElementById('hamburger');
-    const navList = document.getElementById('navList');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    if (hamburger && navList) {
-        // ハンバーガーボタンのクリック処理
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navList.classList.toggle('active');
-            
-            // ボディのスクロールを制御
-            if (navList.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        });
-        
-        // ナビゲーションリンクがクリックされたときにメニューを閉じる
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                // メニューを閉じる（モバイルの場合）
-                hamburger.classList.remove('active');
-                navList.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-        
-        // ウィンドウリサイズ時の処理
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                hamburger.classList.remove('active');
-                navList.classList.remove('active');
                 document.body.style.overflow = '';
             }
         });
@@ -150,96 +103,6 @@ function setupSmoothScroll() {
             // 外部リンクや他のHTMLファイルへのリンクはそのまま通す
         });
     });
-}
-
-// コンタクトフォームの処理
-function setupContactForm() {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-            
-            // フォームバリデーション
-            if (validateForm(formData)) {
-                // ここで実際の送信処理を行う（例：API呼び出し）
-                console.log('フォームデータ:', formData);
-                showMessage('メッセージを送信しました！', 'success');
-                contactForm.reset();
-            }
-        });
-    }
-}
-
-// フォームバリデーション
-function validateForm(data) {
-    if (!data.name.trim()) {
-        showMessage('お名前を入力してください', 'error');
-        return false;
-    }
-    
-    if (!data.email.trim()) {
-        showMessage('メールアドレスを入力してください', 'error');
-        return false;
-    }
-    
-    if (!isValidEmail(data.email)) {
-        showMessage('有効なメールアドレスを入力してください', 'error');
-        return false;
-    }
-    
-    if (!data.message.trim()) {
-        showMessage('メッセージを入力してください', 'error');
-        return false;
-    }
-    
-    return true;
-}
-
-// メールアドレスの形式チェック
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// メッセージ表示
-function showMessage(message, type) {
-    // 既存のメッセージを削除
-    const existingMessage = document.querySelector('.form-message');
-    if (existingMessage) {
-        existingMessage.remove();
-    }
-    
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `form-message ${type}`;
-    messageDiv.textContent = message;
-    
-    // スタイルを追加
-    messageDiv.style.cssText = `
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 4px;
-        text-align: center;
-        font-weight: bold;
-        ${type === 'success' ? 
-            'background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb;' : 
-            'background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;'
-        }
-    `;
-    
-    const form = document.getElementById('contactForm');
-    form.appendChild(messageDiv);
-    
-    // 3秒後にメッセージを削除
-    setTimeout(() => {
-        messageDiv.remove();
-    }, 3000);
 }
 
 // スクロール効果
