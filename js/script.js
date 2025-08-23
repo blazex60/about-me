@@ -1,3 +1,21 @@
+/* 
+=======================================================
+ About Me ポートフォリオサイト - JavaScript メインファイル
+ 作成者: 岩﨑 光希
+ 作成日: 2025年8月23日
+ 機能:
+ - ハンバーガーメニュー制御
+ - 年齢自動計算・表示
+ - スムーススクロール
+ - スキルバーアニメーション
+ - フォーム処理
+======================================================= 
+*/
+
+// ==============================================
+// メイン初期化処理
+// DOMコンテンツ読み込み完了後に各機能を初期化
+// ==============================================
 // DOMが読み込まれた後に実行
 document.addEventListener('DOMContentLoaded', function() {
     console.log('自己紹介サイトが読み込まれました');
@@ -24,26 +42,31 @@ document.addEventListener('DOMContentLoaded', function() {
     setupScrollEffects();
 });
 
+// ==============================================
+// 年齢自動計算機能
+// 生年月日から現在の正確な年齢を計算し、複数箇所に表示
+// ==============================================
 // 年齢を自動計算して表示する関数
 function calculateAndDisplayAge() {
-    // 生年月日を設定（例：2006年8月23日）
+    // 生年月日を設定（例：2006年7月28日）
     const birthDate = new Date('2006-07-28');
     const today = new Date();
     
-    // 年齢を計算
+    // 基本的な年齢計算
     let age = today.getFullYear() - birthDate.getFullYear();
     const monthDiff = today.getMonth() - birthDate.getMonth();
     
-    // 誕生日がまだ来ていない場合は1歳引く
+    // 誕生日がまだ来ていない場合は1歳引く（正確な年齢計算）
     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
         age--;
     }
     
-    // 各要素に年齢を設定
+    // サイト内の年齢表示箇所を取得
     const heroAge = document.getElementById('hero-age');
     const aboutAge = document.getElementById('about-age');
     const statAge = document.getElementById('stat-age');
     
+    // 各要素に計算した年齢を設定（要素が存在する場合のみ）
     if (heroAge) heroAge.textContent = age;
     if (aboutAge) aboutAge.textContent = age;
     if (statAge) statAge.textContent = age;
@@ -51,12 +74,17 @@ function calculateAndDisplayAge() {
     console.log(`年齢が自動計算されました: ${age}歳`);
 }
 
+// ==============================================
+// ハンバーガーメニュー制御（新デザイン用）
+// モバイル向けナビゲーション表示/非表示切り替え
+// ==============================================
 // 新しいハンバーガーメニューの設定（tempデザイン用）
 function setupNewHamburgerMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
     if (hamburger && navMenu) {
+        // ハンバーガーボタンクリック時の処理
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');

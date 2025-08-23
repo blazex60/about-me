@@ -1,14 +1,28 @@
+/* 
+=======================================================
+ About Me ポートフォリオサイト - メインスタイル
+ 作成者: 岩﨑 光希
+ 作成日: 2025年8月23日
+ 用途: モダンなポートフォリオデザイン
+ 主な特徴: エメラルドグリーンテーマ、レスポンシブ
+======================================================= 
+*/
+
 /* メインスタイルファイル - モダンなポートフォリオデザイン */
 
+/* ========================================
+   リセット・基本スタイル設定
+   ブラウザ間差異の統一
+======================================== */
 /* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* padding・borderを要素幅に含める */
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* アンカーリンクのスムーズスクロール */
 }
 
 body {
@@ -18,18 +32,28 @@ body {
     background-color: #fefffe;
 }
 
+/* ========================================
+   CSS変数（カスタムプロパティ）
+   サイト全体で使用する調整可能な値
+======================================== */
 /* Adjustable variables */
 :root {
     /* Heroセクションのオーバーレイ不透明度をここで調整 (0 ~ 1) */
     --hero-overlay-opacity: 0.8;
 }
 
+/* ========================================
+   コンテナ・レイアウト基本設定
+======================================== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* ========================================
+   タイポグラフィ（文字設定）
+======================================== */
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
@@ -44,6 +68,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
+/* セクションタイトル下のアクセント線 */
 .section-title::after {
     content: '';
     position: absolute;
@@ -56,6 +81,10 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 2px;
 }
 
+/* ========================================
+   ボタンコンポーネント
+   プライマリ・セカンダリの2種類
+======================================== */
 /* Buttons */
 .btn {
     display: inline-block;
@@ -69,16 +98,18 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem;
 }
 
+/* メインボタン（グラデーション） */
 .btn-primary {
     background: linear-gradient(135deg, #10b981 0%, #047857 100%);
     color: white;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* ホバー時に浮き上がる */
     box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
 }
 
+/* サブボタン（アウトライン） */
 .btn-secondary {
     background: transparent;
     color: #10b981;
@@ -91,13 +122,17 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-2px);
 }
 
+/* ========================================
+   ナビゲーションバー
+   固定ヘッダー・レスポンシブ対応
+======================================== */
 /* Navigation */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     background: linear-gradient(135deg, rgba(16, 185, 129, 0.95) 0%, rgba(4, 120, 87, 0.95) 100%);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px); /* 背景ぼかし効果 */
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
