@@ -2,6 +2,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('自己紹介サイトが読み込まれました');
     
+    // 年齢の自動計算
+    calculateAndDisplayAge();
+    
     // 新しいハンバーガーメニューの設定
     setupNewHamburgerMenu();
     
@@ -20,6 +23,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // スクロール時のナビゲーション効果
     setupScrollEffects();
 });
+
+// 年齢を自動計算して表示する関数
+function calculateAndDisplayAge() {
+    // 生年月日を設定（例：2006年8月23日）
+    const birthDate = new Date('2006-07-28');
+    const today = new Date();
+    
+    // 年齢を計算
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    // 誕生日がまだ来ていない場合は1歳引く
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    
+    // 各要素に年齢を設定
+    const heroAge = document.getElementById('hero-age');
+    const aboutAge = document.getElementById('about-age');
+    const statAge = document.getElementById('stat-age');
+    
+    if (heroAge) heroAge.textContent = age;
+    if (aboutAge) aboutAge.textContent = age;
+    if (statAge) statAge.textContent = age;
+    
+    console.log(`年齢が自動計算されました: ${age}歳`);
+}
 
 // 新しいハンバーガーメニューの設定（tempデザイン用）
 function setupNewHamburgerMenu() {
