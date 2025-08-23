@@ -21,7 +21,7 @@ body {
 /* Adjustable variables */
 :root {
     /* Heroセクションのオーバーレイ不透明度をここで調整 (0 ~ 1) */
-    --hero-overlay-opacity: 0.7;
+    --hero-overlay-opacity: 0.8;
 }
 
 .container {
