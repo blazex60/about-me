@@ -23,11 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // 年齢の自動計算
     calculateAndDisplayAge();
     
-    // 新しいハンバーガーメニューの設定
+    // ハンバーガーメニューの設定
     setupNewHamburgerMenu();
-    
-    // ハンバーガーメニューの設定（レガシー）
-    setupHamburgerMenu();
     
     // スキルバーのアニメーション
     animateSkillBars();
@@ -88,6 +85,8 @@ function setupNewHamburgerMenu() {
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            const expanded = hamburger.classList.contains('active');
+            hamburger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
             
             // ボディのスクロールを制御
             if (navMenu.classList.contains('active')) {
@@ -105,6 +104,7 @@ function setupNewHamburgerMenu() {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.style.overflow = '';
+                hamburger.setAttribute('aria-expanded', 'false');
             });
         });
         
@@ -114,51 +114,13 @@ function setupNewHamburgerMenu() {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.style.overflow = '';
+                hamburger.setAttribute('aria-expanded', 'false');
             }
         });
     }
 }
 
 // ハンバーガーメニューの設定
-function setupHamburgerMenu() {
-    const hamburger = document.getElementById('hamburger');
-    const navList = document.getElementById('navList');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    if (hamburger && navList) {
-        // ハンバーガーボタンのクリック処理
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navList.classList.toggle('active');
-            
-            // ボディのスクロールを制御
-            if (navList.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        });
-        
-        // ナビゲーションリンクがクリックされたときにメニューを閉じる
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                // メニューを閉じる（モバイルの場合）
-                hamburger.classList.remove('active');
-                navList.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-        
-        // ウィンドウリサイズ時の処理
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                hamburger.classList.remove('active');
-                navList.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    }
-}
 
 // スキルバーのアニメーション
 function animateSkillBars() {
@@ -183,29 +145,21 @@ function animateSkillBars() {
 // スムーススクロール
 function setupSmoothScroll() {
     const navLinks = document.querySelectorAll('.nav-link');
-    
+    const navHeader = document.querySelector('.navbar');
+    const headerHeight = navHeader ? navHeader.offsetHeight : 0;
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            
-            // ハッシュリンク（#で始まるリンク）の場合のみスムーススクロール処理
+            if (!href) return;
             if (href.startsWith('#')) {
                 e.preventDefault();
-                
                 const targetId = href.substring(1);
                 const targetElement = document.getElementById(targetId);
-                
                 if (targetElement) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
                     const targetPosition = targetElement.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                 }
             }
-            // 外部リンクや他のHTMLファイルへのリンクはそのまま通す
         });
     });
 }
@@ -302,21 +256,20 @@ function showMessage(message, type) {
 
 // スクロール効果
 function setupScrollEffects() {
-    const header = document.querySelector('.header');
+    const header = document.querySelector('.navbar');
     let lastScrollY = window.scrollY;
     
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        
-        // ヘッダーの透明度調整
-        if (currentScrollY > 100) {
-            header.style.backgroundColor = 'rgba(44, 62, 80, 0.95)';
-        } else {
-            header.style.backgroundColor = '';
-        }
-        
-        lastScrollY = currentScrollY;
-    });
+    if (header) {
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > 100) {
+                header.style.backgroundColor = 'rgba(4,120,87,0.95)';
+            } else {
+                header.style.backgroundColor = '';
+            }
+            lastScrollY = currentScrollY;
+        });
+    }
     
     // カードの表示アニメーション
     const cards = document.querySelectorAll('.hobby-card, .skill-item');

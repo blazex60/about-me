@@ -35,13 +35,14 @@
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">メインコンテンツへ移動</a>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="メインナビゲーション">
         <div class="nav-container">
             <div class="nav-logo">
                 <img src="images/site_logo.svg" alt="About-Me Logo" class="site-logo">
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="primary-navigation">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">Home</a>
                 </li>
@@ -61,7 +62,7 @@
                     <a href="contact.html" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div class="hamburger">
+        <div class="hamburger" role="button" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -69,10 +70,10 @@
         </div>
     </nav>
 
-    <main class="main" style="padding-top: 70px;">
-        <section id="contact" class="section">
+    <main class="main" id="main-content" style="padding-top: 70px;">
+    <section id="contact" class="section">
             <div class="container">
-                <h2 class="section-title">連絡先</h2>
+                <h1 class="section-title">連絡先</h1>
                 <div class="contact-intro">
                     <p class="contact-description">
                         お気軽にご連絡ください。以下の方法でコンタクトを取ることができます。
@@ -115,6 +116,27 @@
                         <li>返信には24時間以内にお答えするよう心がけています</li>
                         <li>GitHubでは気が向いたら開発中のプロジェクトやコードを公開しています</li>
                     </ul>
+                </div>
+
+                <!-- お問い合わせフォーム（最低要件対応） -->
+                <div class="contact-form-wrapper">
+                    <h3 class="form-title">お問い合わせフォーム</h3>
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name">お名前<span class="req">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="山田 太郎">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">メールアドレス<span class="req">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="example@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">メッセージ<span class="req">*</span></label>
+                            <textarea id="message" name="message" rows="5" required placeholder="お問い合わせ内容を入力してください"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary contact-submit-btn">送信</button>
+                        <p class="form-disclaimer">※ 現在はデモのため実際の送信は行われず、入力内容は画面内でのみ処理されます。</p>
+                    </form>
                 </div>
             </div>
         </section>

@@ -35,13 +35,14 @@
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">メインコンテンツへ移動</a>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="メインナビゲーション">
         <div class="nav-container">
             <div class="nav-logo">
                 <img src="images/site_logo.svg" alt="About-Me Logo" class="site-logo">
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="primary-navigation">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">Home</a>
                 </li>
@@ -61,7 +62,7 @@
                     <a href="contact.html" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div class="hamburger">
+        <div class="hamburger" role="button" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -69,10 +70,10 @@
         </div>
     </nav>
 
-    <main class="main" style="padding-top: 70px;">
-        <section id="car-intro" class="section">
+    <main class="main" id="main-content" style="padding-top: 70px;">
+    <section id="car-intro" class="section">
             <div class="container">
-                <h2 class="section-title">愛車紹介</h2>
+        <h1 class="section-title">愛車紹介</h1>
                 <div class="car-hero">
                     <div class="car-main-image">
                         <img src="images/fk7_mie.jpg" alt="FK7 シビック" class="car-img" onerror="this.src='images/no_image.svg';">
