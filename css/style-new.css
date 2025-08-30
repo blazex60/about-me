@@ -386,6 +386,18 @@ h1, h2, h3, h4, h5, h6 {
     color: #10b981 !important;
 }
 
+/* a要素として利用する趣味カード（ドライブカードなど）のサイズ維持 */
+a.hobby-card {
+    display: block;
+    color: inherit;
+}
+a.hobby-card:visited {
+    color: inherit;
+}
+a.hobby-card:hover {
+    text-decoration: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
