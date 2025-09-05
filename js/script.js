@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // スクロール時のナビゲーション効果
     setupScrollEffects();
+
+    // ページの先頭に戻るボタン
+    createBackToTopButton();
 });
 
 // ==============================================
@@ -331,6 +334,3 @@ function createBackToTopButton() {
     
     document.body.appendChild(button);
 }
-
-// ページの先頭に戻るボタンを作成
-createBackToTopButton();
