@@ -721,7 +721,7 @@ a.hobby-card:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 880px) {
     .hamburger {
         display: flex !important;
         align-items: center;
