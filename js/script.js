@@ -108,6 +108,17 @@ function setupNewHamburgerMenu() {
             });
         });
         
+        // キーボード操作対応
+        hamburger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                hamburger.click();
+            }
+        });
+
+        // 初期状態のaria同期
+        hamburger.setAttribute('aria-expanded', 'false');
+
         // ウィンドウサイズ変更時の処理
         window.addEventListener('resize', function() {
             if (window.innerWidth > 768) {
